@@ -83,6 +83,6 @@ jobs:
         run: |
           sudo mkdir -p /sys/fs/cgroup/test
           echo $((512*1024*1024)) | sudo tee /sys/fs/cgroup/test/memory.max
-          echo $((256*1024*1024)) | sudo tee /sys/fs/cgroup/test/memory.swap.max
+          echo $((512*1024*1024)) | sudo tee /sys/fs/cgroup/test/memory.swap.max
           # Run the command inside the cgroup
           sudo cgexec -g memory:test env PATH=$PATH stdbuf -oL -eL make BUILD_PROFILE=test AMARU_MAX_EXTRA_LEDGER_SNAPSHOTS=all demo
