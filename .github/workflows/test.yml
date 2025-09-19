@@ -85,4 +85,4 @@ jobs:
           # Limit to 512MB
           echo $((512*1024*1024)) | sudo tee /sys/fs/cgroup/test/memory.max
           # Run the command inside the cgroup
-          sudo cgexec -g memory:test make BUILD_PROFILE=test AMARU_MAX_EXTRA_LEDGER_SNAPSHOTS=all demo
+          sudo cgexec -g memory:test env PATH=$PATH make BUILD_PROFILE=test AMARU_MAX_EXTRA_LEDGER_SNAPSHOTS=all demo
