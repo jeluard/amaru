@@ -60,7 +60,7 @@ jobs:
             -v ./cardano-node-config:/config \
             -v ./cardano-node-config:/genesis \
             -p 3001:3001 \
-            ghcr.io/intersectmbo/cardano-node:preprod run \
+            ghcr.io/intersectmbo/cardano-node:${{ env.CARDANO_NODE_VERSION }} run \
               --config /config/config.json \
               --database-path /db \
               --socket-path /ipc/node.socket \
